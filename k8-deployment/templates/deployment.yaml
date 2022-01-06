@@ -4,6 +4,12 @@ metadata:
   name: {{ include "k8-deployment.fullname" . }}
   labels:
     {{- include "k8-deployment.labels" . | nindent 4 }}
+{{- if .Values.keel.enabled }}
+  labels:
+    {{- toYaml .Values.keel.labels | trim | nindent 4 }}
+  annotations:
+    {{- toYaml .Values.keel.annotations | trim | nindent 4 }}
+{{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
