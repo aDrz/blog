@@ -1,43 +1,33 @@
-baseURL = 'https://blog.adrz.dev/'
-languageCode = 'en-us'
-title = 'A blog'
-theme = "etch"
-ignoreErrors = ["error-missing-instagram-accesstoken"]
-enableInlineShortcodes = true
-pygmentsCodeFences = true
-pygmentsUseClasses = true
+baseURL = "https://blog.adrz.dev"
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "Jojo"
+theme = "anatole"
+summarylength = 10
+enableEmoji = true
+enableRobotsTXT = true
 
+# Enable Disqus
+#disqusShortname = ""
+
+# Google Analytics
+#googleAnalytics = "UA-123-45"
+
+# Syntax highlighting
+pygmentsUseClasses = true   
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+        unsafe=true
+
+[taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
 
 [params]
-  description = "A blog..."
-  copyright = "Copy wrong/left/up/down © 2021 aDrz"
-  dark = "auto"
-  highlight = true
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "posts"
-    title = "posts"
-    url = "/"
-    weight = 10
-
-  [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "about"
-    url = "/about/"
-    weight = 20
-
-  [[menu.main]]
-    identifier = "projects"
-    name = "projects"
-    title = "projects"
-    url = "/projects/"
-    weight = 20
-
-[permalinks]
-  posts = "/:title/"
-
-[markup.goldmark.renderer]
-  # Allows HTML in Markdown
-  unsafe = true
+doNotLoadAnimations = true # Animations are loaded by default
+contentratio = 0.8
