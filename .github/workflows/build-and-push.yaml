@@ -2,17 +2,11 @@
 
 on:
   push:
-    branches:
-      - 'master'
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - 
-        name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
